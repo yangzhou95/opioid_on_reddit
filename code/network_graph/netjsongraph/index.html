@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <link href="src/netjsongraph.css" rel="stylesheet">
+    <!-- theme can be easily customized via css -->
+    <link href="src/netjsongraph-theme.css" rel="stylesheet">
+    <style>
+        .njg-tooltip {
+            font-size: 14px;
+        }
+    </style>
+    <style>
+        body {
+            overflow: hidden
+        }
+
+        .wireless {
+            stroke: #669999
+        }
+
+        /* light green */
+
+        .wireless_weak {
+            stroke: #ccccff
+        }
+
+        /* light grey */
+
+        .ethernet {
+            stroke: #00ff00;
+            stroke-opacity: 0.7
+        }
+
+        /* glowing green */
+
+        .fiber {
+            stroke: #1f77b4
+        }
+
+        .vpn {
+            stroke: purple;
+        }
+
+        .njg-node {
+            fill: #3182bd
+        }
+
+        .njg-node.gateway {
+            fill: #ff8000 !important
+        }
+
+        .njg-link {
+            stroke-width: 5px
+        }
+
+        .njg-link:hover,
+        .njg-link.njg-open {
+            stroke-width: 6px !important;
+            stroke-opacity: 0.7 !important
+        }
+
+        /* legend */
+
+        #legend {
+            position: absolute;
+            top: auto;
+            left: 5px;
+            bottom: 5px;
+            width: auto;
+            height: auto;
+            max-width: 250px;
+            padding: 0 15px;
+            background: #fbfbfb;
+            border-radius: 2px;
+            border: 1px solid #ccc;
+            color: #6d6357;
+            font-family: Arial, sans-serif;
+            font-family: sans-serif;
+            font-size: 14px;
+        }
+
+        #legend p {
+            line-height: 16px;
+            margin: 10px 0
+        }
+
+        #legend span {
+            width: 16px;
+            margin-right: 5px;
+        }
+
+        #legend span.circle {
+            display: inline-block;
+            border-radius: 50%;
+            height: 16px;
+        }
+
+        #legend span.link {
+            display: inline-block;
+            height: 5px;
+            border-bottom-width: 6px;
+            border-bottom-style: solid;
+        }
+
+        #legend .zero {
+            background-color: red
+        }
+
+        #legend .lessthan10 {
+            background-color: orange
+        }
+
+        #legend .lessthan20 {
+            background-color: yellow
+        }
+
+        /* light green */
+
+        #legend .lessthan30 {
+            background-color: purple
+        }
+
+        /* light grey */
+
+        #legend .lessthan40 {
+            background-color: fuchsia
+        }
+
+        /* glowing green */
+
+        #legend .lessthan50 {
+            background-color: lime
+        }
+
+        #legend .lessthan60 {
+            background-color: green
+        }
+
+        #legend .lessthan70 {
+            background-color: navy
+        }
+
+        #legend .lessthan80 {
+            background-color: blue
+        }
+
+        #legend .lessthan90 {
+            background-color: aqua
+        }
+
+        #legend .lessthan100 {
+            background-color: teal
+        }
+
+        #legend .greaterthan100 {
+            background-color: gray
+        }
+    </style>
+</head>
+
+<body>
+    <div id="legend">
+        <p>
+            <span class="circle zero">&nbsp;</span> 0</p>
+        <p>
+            <span class="circle lessthan10">&nbsp;</span> 1-9</p>
+        <p>
+            <span class="circle lessthan20">&nbsp;</span> 10-19</p>
+        <p>
+            <span class="circle lessthan30">&nbsp;</span> 20-29</p>
+        <p>
+            <span class="circle lessthan40">&nbsp;</span> 30-39</p>
+        <p>
+            <span class="circle lessthan50">&nbsp;</span> 40-49</p>
+        <p>
+            <span class="circle lessthan60">&nbsp;</span> 50-59</p>
+        <p>
+            <span class="circle lessthan70">&nbsp;</span> 60-69</p>
+        <p>
+            <span class="circle lessthan80">&nbsp;</span> 70-79</p>
+        <p>
+            <span class="circle lessthan90">&nbsp;</span> 80-89</p>
+        <p>
+            <span class="circle lessthan100">&nbsp;</span> 90-99</p>
+        <p>
+            <span class="circle greaterthan100">&nbsp;</span> 100+</p>
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/3.5.5/d3.min.js"></script>
+    <script src="src/netjsongraph.js"></script>
+    <script>d3.netJsonGraph("netgraphjson.json");</script>
+</body>
+
+</html>
