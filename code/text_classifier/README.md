@@ -1,8 +1,8 @@
 ## A set of classifiers to classify short text (comments, posts, etc)
 
 Supported Classifiers:
-#### KNN
-#### Logistic regression
+### KNN
+### Logistic regression
 ### SVM
 
 ## SVM using LibShortText Library
